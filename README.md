@@ -19,6 +19,11 @@
     Si vous souhaitez utiliser votre propre base de données pendant la phase de développement, faites une
     copie du fichier `.env` dans un fichier `.env.local` et modifiez les informations de connexion pour utiliser votre base de données.
     
+*   Pour tester l'application
+    -   `composer install` pour récupérer les librairies
+    -   `cp .env .env.local` puis édition du fichier `.env.local` pour indiquer les informations de connexion à votre base de données
+    -   `php bin/console server:start` pour lancer l'application
+    
 # Utilisation de la commande git
 
 *   Toujours faire un `git pull` avec de faire un `git push` pour éviter les conflits ...
