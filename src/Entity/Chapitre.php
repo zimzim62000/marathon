@@ -34,6 +34,11 @@ class Chapitre {
     private $titre;
 
     /**
+     * @ORM\Column(type="string", length=30)
+     */
+    private $titreCourt;
+
+    /**
      * @ORM\Column(type="string", length=256)
      */
     private $photo;
