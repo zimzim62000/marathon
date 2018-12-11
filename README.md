@@ -3,7 +3,7 @@
 *   Le projet contient une base Symfony 4.2
 *   Les entités du système d'information données dans la figure suivante :
 
-    ![](baseDonnesSymfony.png) 
+    ![](baseDonnees.png) 
 
 *   Un contrôleur `SecurityController` qui contrôle l'accès aux pages protégées.
 *   Un contrôleur `RegistrationController` qui permet d'ajouter un utilisateur.
