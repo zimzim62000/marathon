@@ -44,7 +44,7 @@ class Chapitre {
     private $photo;
 
     /**
-     * @ORM\Column(type="string", length=256)
+     * @ORM\Column(type="string", length=256, nullable=true)
      */
     private $question;
 
@@ -195,5 +195,21 @@ class Chapitre {
     public function setOrigines($origines): void {
         $this->origines = $origines;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getTitreCourt() {
+        return $this->titreCourt;
+    }
+
+    /**
+     * @param mixed $titreCourt
+     */
+    public function setTitreCourt($titreCourt): void {
+        $this->titreCourt = $titreCourt;
+    }
+
+
 
 }

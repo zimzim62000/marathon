@@ -20,7 +20,7 @@ class Histoire {
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $nom;
+    private $titre;
 
     /**
      * @ORM\Column(type="text", length=500)
@@ -34,7 +34,7 @@ class Histoire {
     private $photo;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\genre")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Genre")
      */
     private $genre;
 
@@ -46,15 +46,15 @@ class Histoire {
     /**
      * @return mixed
      */
-    public function getNom() {
-        return $this->nom;
+    public function getTitre() {
+        return $this->titre;
     }
 
     /**
-     * @param mixed $nom
+     * @param mixed $titre
      */
-    public function setNom($nom): void {
-        $this->nom = $nom;
+    public function setTitre($titre): void {
+        $this->titre = $titre;
     }
 
     /**
@@ -86,24 +86,39 @@ class Histoire {
     }
 
     /**
-     * @return string
+     * @return mixed
      */
-    public function getGenre(): string {
+    public function getGenre() {
         return $this->genre;
     }
 
     /**
-     * @param string $genre
+     * @param mixed $genre
      */
-    public function setGenre(string $genre): void {
+    public function setGenre($genre): void {
         $this->genre = $genre;
     }
+
 
     /**
      * @return mixed
      */
     public function getId() {
         return $this->id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUser() {
+        return $this->user;
+    }
+
+    /**
+     * @param mixed $user
+     */
+    public function setUser($user): void {
+        $this->user = $user;
     }
 
 }
