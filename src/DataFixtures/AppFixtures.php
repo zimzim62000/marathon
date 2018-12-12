@@ -271,6 +271,7 @@ class AppFixtures extends Fixture {
         $chapitre->setPhoto("https://i.ytimg.com/vi/aockugeMFyg/maxresdefault.jpg");
         $chapitre->setPremier(false);
         $manager->persist($chapitre);
+        $manager->flush();
 
         $suite = new Suite();
         $chapitre = $repChapitre->find(8);

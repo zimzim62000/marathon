@@ -24,6 +24,27 @@
     -   `cp .env .env.local` puis édition du fichier `.env.local` pour indiquer les informations de connexion à votre base de données
     -   `php bin/console server:start` pour lancer l'application
     
+# initialiser la base de données
+
+*   Pour créer les tables dans la base de données :
+    ```bash
+    php bin/console doctrine:migrations:migrate
+    ```    
+*   Pour mettre des données dans les tables
+
+    ```bash
+    php bin/console doctrine:fixtures:load
+    ```
+    Cette dernière commande ajoute deux utilisateurs (voir le fichier `src/DataFixtures/AppFixtures.php`) :
+    
+    -   Robert Duchmol Robert.duchmol@marathon.com mdp : secret
+    -   Isaac Asimov    asimov@gmail.com mdp : secret
+    
+    et Deux histoires
+    
+    -   z1 ou la vie d'un demi-octet
+    -   THX1138
+    
 # Utilisation de la commande git
 
 *   Toujours faire un `git pull` avec de faire un `git push` pour éviter les conflits ...

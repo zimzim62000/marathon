@@ -12,11 +12,22 @@ use Symfony\Bridge\Doctrine\RegistryInterface;
  * @method Lecture[]    findAll()
  * @method Lecture[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class LectureRepository extends ServiceEntityRepository
-{
-    public function __construct(RegistryInterface $registry)
-    {
+class LectureRepository extends ServiceEntityRepository {
+    public function __construct(RegistryInterface $registry) {
         parent::__construct($registry, Lecture::class);
+    }
+
+    public function findAllGreaterThanNumSequence(User $user, Histoire $histoire, $numSequence): array {
+        $qb = $this->createQueryBuilder('l')
+            ->andWhere('l.user = :user')
+            ->andWhere('l.histoire = :histoire')
+            ->andWhere('l.numSequence > :numSequence')
+            ->setParameter('user', $user)
+            ->setParameter('histoire', $histoire)
+            ->setParameter('numSequence', $numSequence)
+            ->getQuery();
+
+        return $qb->execute();
     }
 
     // /**
