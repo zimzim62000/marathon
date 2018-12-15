@@ -47,6 +47,7 @@ class AppFixtures extends Fixture {
              En même temps, cela lui permet au mois de représenter des nombres en mode binaire. C'est déjà cela !");
         $histoire->setPhoto("https://bathboxoffice.org.uk/wp-content/uploads/2017/10/the-octet-logo-mall-2.jpg");
         $histoire->setUser($user);
+        $histoire->setActif(true);
         $histoire->setGenre($genreSF);
         $manager->persist($histoire);
 
@@ -171,6 +172,7 @@ class AppFixtures extends Fixture {
         $histoire->setTitre('THX1138');
         $histoire->setPitch("THX1138 est un robot mal dans sa peau et qui cherche un sens à sa vie.");
         $histoire->setPhoto("https://m.media-amazon.com/images/M/MV5BYzRiY2I3M2EtODJkMy00NTEyLTgxNmYtYzYwYjk1ZDE1MDE1XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_UY1200_CR111,0,630,1200_AL_.jpg");
+        $histoire->setActif(true);
         $histoire->setUser($asimov);
         $histoire->setGenre($genreSF);
         $manager->persist($histoire);

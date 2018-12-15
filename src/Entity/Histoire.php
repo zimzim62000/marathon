@@ -27,7 +27,6 @@ class Histoire {
      */
     private $pitch;
 
-
     /**
      * @ORM\Column(type="string", length=256)
      */
@@ -42,6 +41,10 @@ class Histoire {
      * @ORM\ManyToOne(targetEntity="App\Entity\User")
      */
     private $user;
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $actif;
 
     /**
      * @return mixed
@@ -119,6 +122,20 @@ class Histoire {
      */
     public function setUser($user): void {
         $this->user = $user;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getActif() {
+        return $this->actif;
+    }
+
+    /**
+     * @param mixed $actif
+     */
+    public function setActif($actif): void {
+        $this->actif = $actif;
     }
 
 }
