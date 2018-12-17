@@ -47,6 +47,6 @@
     
 # Utilisation de la commande git
 
-*   Toujours faire un `git pull` avec de faire un `git push` pour éviter les conflits ...
+*   Toujours faire un `git pull` avant de faire un `git push` pour éviter les conflits ...
     
  
