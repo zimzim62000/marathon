@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Histoire{% endblock %}
+
+{% block body %}
+    <h1>Histoire</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ histoire.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ histoire.titre }}</td>
+            </tr>
+            <tr>
+                <th>Pitch</th>
+                <td>{{ histoire.pitch }}</td>
+            </tr>
+            <tr>
+                <th>Photo</th>
+                <td>{{ histoire.photo }}</td>
+            </tr>
+            <tr>
+                <th>Actif</th>
+                <td>{{ histoire.actif ? 'Yes' : 'No' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('histoire_index') }}">back to list</a>
+
+    <a href="{{ path('histoire_edit', {'id': histoire.id}) }}">edit</a>
+
+    {{ include('histoire/_delete_form.html.twig') }}
+{% endblock %}

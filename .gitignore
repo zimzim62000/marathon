@@ -185,3 +185,10 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+#APACHE2
+/public/.htaccess
+
+#NODES_MODULES
+/node_modules
+

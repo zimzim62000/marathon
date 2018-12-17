@@ -138,4 +138,7 @@ class Histoire {
         $this->actif = $actif;
     }
 
+    public function __toString(): string{
+        return $this->getTitre();
+    }
 }

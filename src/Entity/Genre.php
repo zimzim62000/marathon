@@ -54,4 +54,8 @@ class Genre {
         $this->label = $label;
     }
 
+    public function __toString(): string{
+        return $this->getLabel();
+    }
+
 }

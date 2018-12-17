@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Histoire index{% endblock %}
+
+{% block body %}
+    <h1>Histoire index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Titre</th>
+                <th>Pitch</th>
+                <td>User</td>
+                <th>Photo</th>
+                <th>Actif</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for histoire in histoires %}
+            <tr>
+                <td>{{ histoire.id }}</td>
+                <td>{{ histoire.titre }}</td>
+                <td>{{ histoire.pitch }}</td>
+                <td>{{ histoire.user.email }}</td>
+                <td>{{ histoire.photo }}</td>
+                <td>{{ histoire.actif ? 'Yes' : 'No' }}</td>
+                <td>
+                    <a href="{{ path('histoire_show', {'id': histoire.id}) }}">show</a>
+                    <a href="{{ path('histoire_edit', {'id': histoire.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('histoire_new') }}">Create new</a>
+{% endblock %}

@@ -7,6 +7,9 @@
     </head>
     <body>
         {% include 'navbar.html.twig' %}
+        {% block flashbag %}
+            {% include 'flashbag.html.twig' %}
+        {% endblock flashbag%}
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>

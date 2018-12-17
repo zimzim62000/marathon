@@ -175,5 +175,7 @@ class User implements UserInterface
         $this->plainPassword = $plainPassword;
     }
 
-
+    public function __toString(): string{
+        return $this->getEmail();
+    }
 }

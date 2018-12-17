@@ -111,4 +111,5 @@ class Lecture
     public function setHistoire($histoire): void {
         $this->histoire = $histoire;
     }
+
 }

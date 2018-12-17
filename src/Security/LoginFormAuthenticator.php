@@ -18,6 +18,7 @@ use Symfony\Component\Security\Csrf\CsrfToken;
 use Symfony\Component\Security\Csrf\CsrfTokenManagerInterface;
 use Symfony\Component\Security\Guard\Authenticator\AbstractFormLoginAuthenticator;
 use Symfony\Component\Security\Http\Util\TargetPathTrait;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
 {
@@ -27,13 +28,15 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
     private $router;
     private $csrfTokenManager;
     private $passwordEncoder;
+    private $session;
 
-    public function __construct(EntityManagerInterface $entityManager, RouterInterface $router, CsrfTokenManagerInterface $csrfTokenManager, UserPasswordEncoderInterface $passwordEncoder)
+    public function __construct(EntityManagerInterface $entityManager, RouterInterface $router, CsrfTokenManagerInterface $csrfTokenManager, UserPasswordEncoderInterface $passwordEncoder, SessionInterface $session)
     {
         $this->entityManager = $entityManager;
         $this->router = $router;
         $this->csrfTokenManager = $csrfTokenManager;
         $this->passwordEncoder = $passwordEncoder;
+        $this->session = $session;
     }
 
     public function supports(Request $request)
@@ -85,8 +88,10 @@ class LoginFormAuthenticator extends AbstractFormLoginAuthenticator
             return new RedirectResponse($targetPath);
         }
 
+        $this->session->getFlashBag()->add('success', 'Connexion réussi :)');
+
         // For example : return new RedirectResponse($this->router->generate('some_route'));
-        return new RedirectResponse($this->router->generate('visualisation'));
+        return new RedirectResponse($this->router->generate('histoire_index'));
 
         //throw new \Exception('TODO: provide a valid redirect inside '.__FILE__);
     }
