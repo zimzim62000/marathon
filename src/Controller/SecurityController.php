@@ -67,7 +67,7 @@ class SecurityController extends AbstractController
             // maybe set a "flash" success message for the user
 
 
-            return $this->redirectToRoute('histoire');
+            return $this->redirectToRoute('histoire_index');
         }
 
         return $this->render(
